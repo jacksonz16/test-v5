@@ -1,0 +1,95 @@
+:root {
+    /*maincolors*/
+    --green: #52d053;
+    --purple:#765898;
+    --red:#ec2323;
+    --OJ:#ea8532;
+    /* starting colors */
+    --primary: var(--purple);
+    --secondary: var(--green);
+    --background: var(--purple);
+    }
+    .light {
+      --primary: var(--purple);
+      --secondary: var(--green);
+      --background: var(--purple);
+    }
+    .dark {
+      --primary: var(--red);
+      --secondary: var(--OJ);
+      --background: var(--red);
+    }
+    
+    body {
+      margin: 0px;
+      padding: 0px;
+      background-color: var(--background);
+      font-family: 'Caudex', serif
+    }
+    
+    #header {
+      text-align: center;
+      background-size: cover;
+      background-color: var(--primary);
+      color: var(--secondary);
+      font-size: xx-large;
+      padding-top: 10px; padding-bottom: 10px;
+    }
+    
+    #filters {
+      text-align: center;
+      background-color: var(--secondary);
+    }
+      .button {
+    
+          background-color: rgba(51, 51, 51, 0.05);
+          border-radius: 8px;
+          border-width: 0;
+          color: #333333;
+          cursor: pointer;
+          display: inline-block;
+          font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 20px;
+          list-style: none;
+          margin: 0;
+          padding: 10px 12px;
+          text-align: center;
+          transition: all 200ms;
+          vertical-align: baseline;
+          white-space: nowrap;
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+        }
+      
+      #toggle-button {
+        margin: 20px;
+        cursor: pointer;
+      }
+    
+    #menu {
+      margin: 2vh auto 0vw auto;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      max-width: 90%;
+    }
+      .menu-item {
+        flex: 0 0 50%;
+        background-color: var(--primary);
+        border: solid var(--secondary) 5px;
+        border-radius: 20px;
+        max-height: 60vh; max-width: 48vh;
+        margin-bottom: 2vh;
+        text-align: center;
+      }
+        .item-img {
+            height: 20rem; width: 20rem;
+            margin: 4vh 3vh 0vh 3vh;
+        }
+        .item-name {
+          text-align: center;
+          color: var(--secondary);
+        }
