@@ -1,6 +1,6 @@
 import '../css/style.css'
 import { DOMselectors } from './dom.js'
-import { evangelion } from './menu.js'
+import { Merch } from './menu.js'
 
 function toggleColors() {
     if (DOMselectors.body.classList.contains("light")) {
@@ -13,100 +13,41 @@ function toggleColors() {
 };
 DOMselectors.toggleButton.addEventListener("click", toggleColors);
 
-evangelion.forEach(merch => {
-    DOMselectors.menu.insertAdjacentHTML(
-        "beforeend",
-        `
-            <div class="menu-item">
-                <img src="${merch.image}" alt="" class="item-img">
-                <h2 class="item-name">${merch.name}</h2>
-            </div>
-        `
-    );
-});
-
-function filterAll() {
+function filterFor(array) {
     DOMselectors.menu.innerHTML = "";
-    evangelion.forEach(merch => {
+    array.forEach(eva => {
         DOMselectors.menu.insertAdjacentHTML(
             "beforeend",
             `
                 <div class="menu-item">
-                    <img src="${merch.image}" alt="" class="item-img">
-                    <h2 class="item-name">${merch.name}</h2>
+                    <img src="${eva.image}" alt="" class="item-img">
+                    <h2 class="item-name">${eva.name}</h2>
                 </div>
             `
         );
     });
+};
+filterFor(Merch);
+
+function filterAll() {
+    filterFor(Merch);
 };
 DOMselectors.allFilter.addEventListener("click", filterAll);
 
-function filterBeverages() {
-    DOMselectors.menu.innerHTML = "";
-    const beverages = evangelion.filter(merch => merch.beverage === true);
-    beverages.forEach(merch => {
-        DOMselectors.menu.insertAdjacentHTML(
-            "beforeend",
-            `
-                <div class="menu-item">
-                    <img src="${merch.image}" alt="" class="item-img">
-                    <h2 class="item-name">${merch.name}</h2>
-                </div>
-            `
-        );
-    });
+function filterShiniji() {
+    const Shiniji = Merch.filter(eva => eva.Shiniji === true);
+    filterFor(Shiniji);
 };
-DOMselectors.beverageFilter.addEventListener("click", filterBeverages);
+DOMselectors.ShinijiFilter.addEventListener("click", filterShiniji);
 
-function filterbodypillows() {
-    DOMselectors.menu.innerHTML = "";
-    const bodypillows = evangelion.filter(merch => merch.bodypillow === true);
-    bodypillows.forEach(merch => {
-        DOMselectors.menu.insertAdjacentHTML(
-            "beforeend",
-            `
-                <div class="menu-item">
-                    <img src="${merch.image}" alt="" class="item-img">
-                    <h2 class="item-name">${merch.name}</h2>
-                </div>
-            `
-        );
-    });
+function filterREI() {
+    const REI = Merch.filter(eva => eva.REI === true);
+    filterFor(REI);
 };
-DOMselectors.bodypillowFilter.addEventListener("click", filterbodypillows);
+DOMselectors.REIFilter.addEventListener("click", filterREI);
 
-function filterasuka() {
-    DOMselectors.menu.innerHTML = "";
-    const asuka = evangelion.filter(merch => merch.side === true);
-    asuka.forEach(merch => {
-        DOMselectors.menu.insertAdjacentHTML(
-            "beforeend",
-            `
-                <div class="menu-item">
-                    <img src="${merch.image}" alt="" class="item-img">
-                    <h2 class="item-name">${merch.name}</h2>
-                </div>
-            `
-        );
-    });
+function filterAsuka() {
+    const Asuka = Merch.filter(eva => eva.Asuka === true);
+    filterFor(Asuka);
 };
-DOMselectors.asukaFilter.addEventListener("click", filterasuka
-
-);
-
-function filterrei() {
-    DOMselectors.menu.innerHTML = "";
-    const reimerch = evangelion.filter(merch => merch.rei === true);
-    reimerch.forEach(merch => {
-        DOMselectors.menu.insertAdjacentHTML(
-            "beforeend",
-            `
-                <div class="menu-item">
-                    <img src="${merch.image}" alt="" class="item-img">
-                    <h2 class="item-name">${merch.name}</h2>
-                </div>
-            `
-        );
-    });
-};
-DOMselectors.reiFilter.addEventListener("click", filterrei);
+DOMselectors.AsukaFilter.addEventListener("click", filterAsuka);

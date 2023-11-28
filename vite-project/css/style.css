@@ -24,7 +24,7 @@
       margin: 0px;
       padding: 0px;
       background-color: var(--background);
-      font-family: 'Caudex', serif
+      font-family: Helvetica Neue;
     }
     
     #header {
@@ -34,6 +34,7 @@
       color: var(--secondary);
       font-size: xx-large;
       padding-top: 10px; padding-bottom: 10px;
+      font-family: Helvetica Neue;
     }
     
     #filters {
@@ -41,28 +42,46 @@
       background-color: var(--secondary);
     }
       .button {
-    
-          background-color: rgba(51, 51, 51, 0.05);
-          border-radius: 8px;
-          border-width: 0;
-          color: #333333;
+          background-color: var(--primary);
+          border: 1px solid transparent;
+          border-radius: .75rem;
+          box-sizing: border-box;
+          color: var(--secondary);
           cursor: pointer;
-          display: inline-block;
-          font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-          font-size: 14px;
-          font-weight: 500;
-          line-height: 20px;
-          list-style: none;
-          margin: 0;
-          padding: 10px 12px;
+          flex: 0 0 auto;
+          font-family: 'Helvetica', 'Arial', sans-serif;
+          font-size: 1.125rem;
+          font-weight: 600;
+          line-height: 1.5rem;
+          padding: .75rem 1.2rem;
           text-align: center;
-          transition: all 200ms;
-          vertical-align: baseline;
-          white-space: nowrap;
+          text-decoration: none #6B7280 solid;
+          text-decoration-thickness: auto;
+          transition-duration: .2s;
+          transition-property: background-color,border-color,color,fill,stroke;
+          transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
           user-select: none;
           -webkit-user-select: none;
           touch-action: manipulation;
+          width: auto;
         }
+        
+        .button-40:hover {
+          background-color: #374151;
+        }
+        
+        .button-40:focus {
+          box-shadow: none;
+          outline: 2px solid transparent;
+          outline-offset: 2px;
+        }
+        
+        @media (min-width: 768px) {
+          .button-40 {
+            padding: .75rem 1.5rem;
+          }
+        }
+        
       
       #toggle-button {
         margin: 20px;

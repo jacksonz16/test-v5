@@ -1,9 +1,14 @@
-export const merchandise = [
+console.log("connected");
+
+export const Merch = [
     {
-        name: "test",
-        image: '/img/test.jpg',
-        shiniji: false,
-        Rei: true,
-        Asuska: true,
+        name: "REI DOLL",
+        image: '/nyc-school-lunch_bad-biscuit.png',
+        Shiniji: false,
+        REI: True,
+        Asuka: flase,
+    
     },
+   
+  
 ]
