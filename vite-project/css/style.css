@@ -1,114 +1,96 @@
-:root {
-    /*maincolors*/
-    --green: #52d053;
-    --purple:#765898;
-    --red:#ec2323;
-    --OJ:#ea8532;
-    /* starting colors */
-    --primary: var(--purple);
-    --secondary: var(--green);
-    --background: var(--purple);
+html,
+body,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 60%;
+}
+html {
+  background-color: var(--purple);
+}
+h1 {
+  font-size: 7rem;
+  border: var(--black) 2px;
+}
+
+h3 {
+  font-size: 5rem;}
+#input {
+  width: 70%;
+  height: 4rem;
+  font-size: 24px;
+  background-color: var(--white);
+
+}
+
+.title {
+    color: var(--black);
+  background-color: var(--oj);
+  border-width: 3rem;
+  border-color: var(--black);
+  text-align: center;
+  padding: 3rem;
+
+}
+    :root {
+        /*maincolors*/
+        --green: #52d053;
+        --purple:#765898;
+        --red:#ec2323;
+        --OJ:#ea8532;
+        --black:#000000;
+        --white:#ffffff;
+/*redo this part in perticutly  */
     }
-    .light {
-      --primary: var(--purple);
-      --secondary: var(--green);
-      --background: var(--purple);
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card {
+    border-style: outset;
+  text-align: center;
+  width: 39%;
+  background-color: var(--green);
+  border-width: 1.5rem;
+  border-style: outset;
+  margin: 3%;
+  max-height: 70rem; 
+}
+.text {
+  padding: 1rem;
+  max-height: 30rem;
+}
+.card img {
+  margin-bottom: 20%;
+  width: initial;
+  margin: 5%;
+  outline: var(--white) 1rem;
+}
+
+  .img {
+    height: 30rem;
+    width: 30rem;
+  }
+  .characterName {
+    font-size: 5rem;
+  }
+  #search {
+    margin: 0px;
+  }
+   
+    #search-bar {
+      padding: 10px;
+      width: 75%;
+      border: gray solid thin;
+      font-size: 5rem;
     }
-    .dark {
-      --primary: var(--red);
-      --secondary: var(--OJ);
-      --background: var(--red);
+    #search-button {
+      padding: 10px;
+      border: none;
+      background: white;
+      color: var(--black);
+      font-size: x-large;
+      cursor: pointer;
     }
-    
-    body {
-      margin: 0px;
-      padding: 0px;
-      background-color: var(--background);
-      font-family: Helvetica Neue;
-    }
-    
-    #header {
-      text-align: center;
-      background-size: cover;
-      background-color: var(--primary);
-      color: var(--secondary);
-      font-size: xx-large;
-      padding-top: 10px; padding-bottom: 10px;
-      font-family: Helvetica Neue;
-    }
-    
-    #filters {
-      text-align: center;
-      background-color: var(--secondary);
-    }
-      .button {
-          background-color: var(--primary);
-          border: 1px solid transparent;
-          border-radius: .75rem;
-          box-sizing: border-box;
-          color: var(--secondary);
-          cursor: pointer;
-          flex: 0 0 auto;
-          font-family: 'Helvetica', 'Arial', sans-serif;
-          font-size: 1.125rem;
-          font-weight: 600;
-          line-height: 1.5rem;
-          padding: .75rem 1.2rem;
-          text-align: center;
-          text-decoration: none #6B7280 solid;
-          text-decoration-thickness: auto;
-          transition-duration: .2s;
-          transition-property: background-color,border-color,color,fill,stroke;
-          transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
-          user-select: none;
-          -webkit-user-select: none;
-          touch-action: manipulation;
-          width: auto;
-        }
-        
-        .button-40:hover {
-          background-color: #374151;
-        }
-        
-        .button-40:focus {
-          box-shadow: none;
-          outline: 2px solid transparent;
-          outline-offset: 2px;
-        }
-        
-        @media (min-width: 768px) {
-          .button-40 {
-            padding: .75rem 1.5rem;
-          }
-        }
-        
-      
-      #toggle-button {
-        margin: 20px;
-        cursor: pointer;
-      }
-    
-    #menu {
-      margin: 2vh auto 0vw auto;
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-around;
-      max-width: 90%;
-    }
-      .menu-item {
-        flex: 0 0 50%;
-        background-color: var(--primary);
-        border: solid var(--secondary) 5px;
-        border-radius: 20px;
-        max-height: 60vh; max-width: 48vh;
-        margin-bottom: 2vh;
-        text-align: center;
-      }
-        .item-img {
-            height: 20rem; width: 20rem;
-            margin: 4vh 3vh 0vh 3vh;
-        }
-        .item-name {
-          text-align: center;
-          color: var(--secondary);
-        }
