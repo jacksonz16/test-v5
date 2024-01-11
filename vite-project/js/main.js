@@ -22,8 +22,8 @@ async function getData(URL) {
       };
     };
     const data = await response.json();
-  DOMSelectors.cards.innerHTML = "";
-  DOMSelectors.error.innerHTML = "";
+  DOMSelector.cards.innerHTML = "";
+  DOMSelector.error.innerHTML = "";
   data.forEach(characters => {
     DOMSelectors.cards.insertAdjacentHTML(
       "beforeend",
