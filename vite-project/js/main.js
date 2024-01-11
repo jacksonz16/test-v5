@@ -48,13 +48,21 @@ async function getData(URL) {
     );
   };
 };
-//reminder add some error codes if there is a wrong input//
+
 DOMSelector.searchForm.addEventListener("submit", function(event) {
-  event.preventDefault();
-  const  character = DOMSelector.searchBar.value
-  const URL = "https://rickandmortyapi.com/api/character/?name="+character
-  getData(URL);
-});
+    event.preventDefault();
+    const  character = DOMSelector.searchBar.value
+    const URL = "https://rickandmortyapi.com/api/character/?name="+character
+    getData(URL);
+  });
+  
+//reminder add some error codes if there is a wrong input//
+// DOMSelector.searchForm.addEventListener("submit", function(event) {
+//   event.preventDefault();
+//   const  character = DOMSelector.searchBar.value
+//   const URL = "https://rickandmortyapi.com/api/character/?name="+character
+//   getData(URL);
+// });
 
 // function defaultCardGenerate(filtercharacters) {
 //     filtercharacters.forEach((characters) => {
