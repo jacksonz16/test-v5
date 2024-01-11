@@ -4,36 +4,37 @@ const URL = "https://rickandmortyapi.com/api/character/?name=";
 
 async function getData(URL) {
   try {
-    const response = await fetch(URL);
-    if (!response.ok) {
+    const responsing = await fetch(URL);
+    if (!responsing.ok) {
       DOMSelector.cards.innerHTML = "";
       DOMSelector.error.innerHTML = "";
-      if (response.status === 400) {
+      if (responsing.status === 400) {
         throw new Error("Error 400: Bad Request" + `<p>WHAT ARE YOU ASKING FOR.</p>`
         );
-      } else if (response.status === 403) {
+      } else if (responsing.status === 403) {
         throw new Error("Error 403: Access Forbidden" + `<p>Your device SEEMS TO HAVE BEEN BANED BY THE API</p>`
         );
-      } else if (response.status === 404) {
+      } else if (responsing.status === 404) {
         throw new Error("Error 404: Not Found" + `<p>SPELL THE NAMES CORRECTLY<p>`
         );
       } else {
-        throw new Error(`Error ${response.status}`);
+        throw new Error(`Error ${responsing.status}`);
       };
     };
-    const data = await response.json();
+    const data = await responsing.json();
   DOMSelector.cards.innerHTML = "";
   DOMSelector.error.innerHTML = "";
-  data.forEach(characters => {
+
+  data.forEach(cards => {
     DOMSelector.cards.insertAdjacentHTML(
       "beforeend",
       `
         <div class="card">
-        <h2 class="characterName">${characters.name}</h2>
-        <img src="${characters.image}" alt="${characters.name}"class="img"/>
+        <h2 class="characterName">${cards.name}</h2>
+        <img src="${cards.image}" alt="${cards.name}"class="img"/>
         <div class="text">
-        <h3>${characters.status}</h3>
-        <h3>${characters.origin.name}</h3>
+        <h3>${cards.status}</h3>
+        <h3>${cards.origin.name}</h3>
         </div>
         `
       );
@@ -53,8 +54,10 @@ DOMSelector.searchForm.addEventListener("submit", function(event) {
     event.preventDefault();
     const  character = DOMSelector.searchBar.value
     const URL = "https://rickandmortyapi.com/api/character/?name="+character
+    console.log(fetch(URL));
     getData(URL);
   });
+
   
 //reminder add some error codes if there is a wrong input//
 // DOMSelector.searchForm.addEventListener("submit", function(event) {

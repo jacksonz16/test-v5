@@ -6,4 +6,5 @@ export const DOMSelector = {
      searchForm: document.getElementById("search"),
      searchBar: document.getElementById("search-bar"),
      error: document.getElementById("error"),
+     outcome: document.getElementById("outcome"),
   };
