@@ -25,7 +25,7 @@ async function getData(URL) {
   DOMSelector.cards.innerHTML = "";
   DOMSelector.error.innerHTML = "";
   data.forEach(characters => {
-    DOMSelectors.cards.insertAdjacentHTML(
+    DOMSelector.cards.insertAdjacentHTML(
       "beforeend",
       `
         <div class="card">
@@ -40,7 +40,7 @@ async function getData(URL) {
     });
   } catch (error) {
     console.log(error);
-    DOMSelectors.error.insertAdjacentHTML(
+    DOMSelector.error.insertAdjacentHTML(
       "beforeend",
       `
         <h3>${error.message}</h3>
@@ -73,10 +73,4 @@ DOMSelector.searchForm.addEventListener("submit", function(event) {
 //       );
 //     });
 //   }
-
-  async function main() {
-    var filtercharacters = await getData(URL);
-    defaultCardGenerate(filtercharacters);
-  }
-  main();
 
